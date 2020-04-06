@@ -1,6 +1,8 @@
 import pygame  
 import Class
+import os
 import random
+
 pygame.init()
 run = True  
 clock = pygame.time.Clock()
@@ -11,11 +13,11 @@ screen = pygame.display.set_mode([640,480])
 
 
 P1 = Class.Grob(64,380,1,11,"running")
-T  = Class.Block(400,10,40,400,"a001")
-T1 = Class.Block(600,10,40,400,"a002")
-T2  = Class.Block(800,10,40,400,"a003")
-T3 = Class.Block(1000,10,40,400,"a004")
-T4  = Class.Block(1200,10,40,400,"a005")
+T  = Class.Block(400,10,40,-400,"a001")
+T1 = Class.Block(600,0,40,400,"a002")
+T2  = Class.Block(800,0,40,400,"a003")
+T3 = Class.Block(1000,0,40,400,"a004")
+T4  = Class.Block(1200,0,40,400,"a005")
 
 	
 while run:
@@ -26,6 +28,7 @@ while run:
 
 	screen.fill((255,255,255))
 
+	pygame.draw.rect(screen,[0,0,255],[0,32,640,432])
 	P1.move()
 	P1.col()
 
