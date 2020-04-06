@@ -55,12 +55,12 @@ class Block():
 			allrects[self.rectname] = self.rect
 			self.rect = allrects.get(self.rectname)
 
-		pygame.draw.rect(screen,[255,120,33],self.rect)
+		pygame.draw.rect(screen,[255,0,0],self.rect)
 	def random(self):
 		if self.rect[0] < -40:
 			self.rect[0] = 1000
 			
-			self.rect[1] = random.choice([0,64])
+			self.rect[1] = random.choice([0,random.randint(64,416)])
 			if self.rect[1] == 0:
 				self.rect[3] = random.randint(60,416)
 			if self.rect[1] == 64:
