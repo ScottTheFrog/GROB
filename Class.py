@@ -39,7 +39,7 @@ class Grob():
 	def col(self):
 		for i in allrects:
 			if self.rect.colliderect(allrects.get(i)):
-				self.speed = 0
+				self.speed = 1
 class Block():
 	def __init__(self,x,y,w,h,rectname):
 		self.x 			= x
@@ -59,9 +59,9 @@ class Block():
 	def random(self):
 		if self.rect[0] < -40:
 			self.rect[0] = 1000
-
-			self.rect[1]= random.randint(0,420)
+			
+			self.rect[1] = random.choice([0,64])
 			if self.rect[1] == 0:
-				self.h = random.randint(60,400)
-			else:
-				self.h = random.randint(self.y,480)
+				self.rect[3] = random.randint(60,416)
+			if self.rect[1] == 64:
+				self.rect[3] = 480
