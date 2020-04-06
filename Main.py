@@ -1,6 +1,5 @@
 import pygame  
 import Class
-import os
 import random
 
 pygame.init()
@@ -26,9 +25,9 @@ while run:
 		if event.type == pygame.QUIT:
 			run = False
 
-	screen.fill((255,255,255))
+	screen.fill((0,0,0))
 
-	pygame.draw.rect(screen,[0,0,255],[0,32,640,432])
+	pygame.draw.rect(screen,[255,255,255],[0,32,640,432])
 	P1.move()
 	P1.col()
 
